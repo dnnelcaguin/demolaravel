@@ -17,12 +17,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//location:8000/home
-Route::get('/home', function () {
-    return view('home');
+//localhost:8000/home
+
+//required parameter
+//example: ID 201512345
+/*Route::get('/home/{id}/{name}', function ($id,$name) {
+	return view('home',['studid' => $id, 'studname' => $name]);
+});*/
+
+//optional parameter
+Route::get('/home/{id?}/{name?}', function ($id = "21",$name = "James Potter") {
+	return view('home',['studid' => $id, 'studname' => $name]);
 });
 
-//location:8000/about
+//localhost:8000/about
 Route::get('/about', function () {
     return view('about');
 });

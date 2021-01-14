@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,9 +13,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //localhost:8000/
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+ 
+
+});*/
+//home.blade.php
+Route::get('/home/{id}',[HomeController::class,'home']);
+
+//app.blade.php
+Route::get('/index',[HomeController::class,'app']);
+
+
+
+
+
+
+
+
+
 
 //localhost:8000/home
 
@@ -26,8 +42,13 @@ Route::get('/', function () {
 });*/
 
 //optional parameter
-Route::get('/home/{id?}/{name?}', function ($id = "21",$name = "James Potter") {
+/*Route::get('/home/{id?}/{name?}', function ($id = "21",$name = "James Potter") {
+
 	return view('home',['studid' => $id, 'studname' => $name]);
+});*/
+
+/*Route::get('/home', function(){
+	return view('home');
 });
 
 //localhost:8000/about
@@ -39,6 +60,11 @@ Route::get('/about', function () {
 //location:8000/contact
 Route::get('/contact', function () {
    echo "<h1>Contact Page</h1>";
+});*/
+
+
+
+//localhost:8000/index
+Route::get('/index', function () {
+    return view('app');
 });
-
-

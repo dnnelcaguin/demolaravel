@@ -17,4 +17,14 @@ class HomeController extends Controller
     public function app(){
     	return view('app');
     }
+
+    public function displayData(Request $request){
+    	//initialization
+
+    	$username = $request->input('uname');
+    	$password = $request->input('pword');
+
+    	return view('app',['uname' => $username, 'pword' => $password]);
+
+    }
 }

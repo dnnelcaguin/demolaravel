@@ -24,6 +24,13 @@ Route::get('/home/{id}',[HomeController::class,'home']);
 //app.blade.php
 Route::get('/index',[HomeController::class,'app']);
 
+//route for display data
+Route::post('/index',[HomeController::class,'displayData']);
+
+
+
+
+
 
 
 

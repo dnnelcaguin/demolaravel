@@ -19,7 +19,29 @@ use App\Http\Controllers\HomeController;
 
 });*/
 //home.blade.php
-Route::get('/home/{id}',[HomeController::class,'home']);
+
+//route for retrieving record
+Route::get('/home',[HomeController::class,'home']);
+
+//route for inserting record
+Route::post('/home',[HomeController::class,'insertData']);
+
+//route for delete record
+Route::get('/delete/{id}',[HomeController::class,'deleteData']);
+
+//route for editing data
+Route::get('/edit/{id}',[HomeController::class,'editData']);
+
+//route for updating Data
+Route::post('/edit/{id}',[HomeController::class,'updateData']);
+
+
+
+
+
+
+
+
 
 //app.blade.php
 Route::get('/index',[HomeController::class,'app']);
